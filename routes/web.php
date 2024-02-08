@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ToureController;
+use App\Http\Controllers\EmployeeController;
 
 
 /*
@@ -15,10 +17,12 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-//Route::get('fruite',[UserController::class,'fruite']);
-//Route::get('about',[UserController::class,'about']);
-//Route::get('user/{id}/{name}', [UserController::class, 'display']);
-Route::view('/','home');
-Route::post('users',[UsersController::class,'getData']);
-Route::view('login','users');
+Route::view('/','welcome');
+Route::get('home',[UsersController::class,'home'])->name('home');
+Route::get('contact',[UsersController::class,'contact'])->name('contact');
+Route::get('aboutus',[UsersController::class,'about'])->name('about1');
+Route::get('practice',[UsersController::class,'getData']);
+Route::get('toure',[ToureController::class,'getData']);
+Route::get('employee',[EmployeeController::class,'getData']);
+
 

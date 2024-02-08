@@ -3,12 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Practise;
+
 
 class UsersController extends Controller
 {
-    function getData(Request $req){
-        //return $req->input();
-        // if you want to return single data  
-       return $req->input('username');  
-    }
+   
+   function getData(){
+      return Practise::all();
+  }
+
+   
+   public function home(){
+      return view('home');
+   }
+   public function contact(){
+      return view('contact');
+   }
+   public function about(){
+      return view('about');
+   }
 }
